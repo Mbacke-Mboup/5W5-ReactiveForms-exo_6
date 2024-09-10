@@ -1,0 +1,16 @@
+<div>
+  <form>
+    <label>
+      <input type="checkbox" [(ngModel)]="sucree" name="sucree" (ngModelChange)="changeHandler($event,'sucree')">
+      J’aime les choses sucrés !
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" [(ngModel)]="sale" name="sale" (ngModelChange)="changeHandler($event,'sale')">
+      J’aime les choses salés !
+    </label>
+  </form>
+  <a href="/caramelAuSel">J'ai Faim</a>
+</div>
+
+<router-outlet></router-outlet>
