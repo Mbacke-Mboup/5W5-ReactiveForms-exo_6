@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+  <mat-error *ngIf="form.hasError('pasBon')">N'importe quoi</mat-error>
+  <mat-form-field style="width: 100%">
+    <input type="text" placeholder="Animal" formControlName="animal" matInput name="animal">
+    <mat-error *ngIf="form.get('animal')?.hasError('required')">L'animal est requis</mat-error>
+    <mat-error *ngIf="form.get('animal')?.hasError('chat')"> Vous devez
+      préférer le chat!</mat-error>
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input type="text" placeholder="INfo > chat?" formControlName="infoAnimal" matInput name="infoAnimal">
+    <mat-error *ngIf="form.get('infoAnimal')?.hasError('required')">Répondez à la question</mat-error>
+    <mat-error *ngIf="form.get('infoAnimal')?.hasError('chatInfo')">Vous devez
+      répondre oui!</mat-error>
+
+  </mat-form-field>
+
+
+  <button mat-raised-button [disabled]="!form.valid">Envoyer</button>
+</form>
